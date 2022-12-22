@@ -26,7 +26,11 @@ gem 'puma'
 # gem 'rack-cors'
 gem 'devise'
 gem 'activeadmin'
-
+gem 'activeadmin_quill_editor'
+gem 'sassc'
+gem "paperclip"
+gem "paperclip-ffmpeg"
+gem 'paperclip-av-transcoder'
 
 
 group :development, :test do

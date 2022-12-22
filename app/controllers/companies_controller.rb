@@ -2,12 +2,14 @@ class CompaniesController < ApplicationController
     
     def index
         @companies = Company.all  
-        render json: @companies 
+        render :json => @companies.to_json(:methods => [:image_url , :video_url]  )
     end
 
     def show
         @company = Company.find(params[:id])
-        render json: @company
+        #@company[:url] = @company.image.url(:thumb) 
+        render :json => @company.to_json(:methods => [:image_url , :video_url]  )
+        #render json: @company
     end
 
     def create
@@ -39,6 +41,6 @@ class CompaniesController < ApplicationController
 
     private
     def company_params
-        params.require(:company).permit(:name , :description)
+        params.require(:company).permit(:name , :description , :image , :video)
     end
 end
