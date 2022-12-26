@@ -26,18 +26,20 @@ gem 'puma'
 # gem 'rack-cors'
 gem 'devise'
 gem 'activeadmin'
-gem 'activeadmin_quill_editor'
-gem 'sassc'
-gem "paperclip"
-gem "paperclip-ffmpeg"
-gem 'paperclip-av-transcoder'
-
+gem 'activeadmin_quill_editor'   #for quill -editor
+gem 'sassc'                      
+gem "paperclip"                 #for image
+gem "paperclip-ffmpeg"          #for video
+gem 'paperclip-av-transcoder'   #for video uploading
+gem "rails_admin_import"        #for csv import
+gem "mail_form"                 #for smtp mail
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "sprockets-rails"
   gem 'sass-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #gem "letter_opener"        # for mail preview
 end
 
 group :development do

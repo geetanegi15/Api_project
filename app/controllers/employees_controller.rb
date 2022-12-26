@@ -10,7 +10,8 @@ class EmployeesController < ApplicationController
         @company = Company.find(params[:company_id])
         @employee = @company.employees.create(employee_params)
 
-        if @employee.save
+        if @employee.save!
+            CreateEmployeeNotificationMailer.create_notification(@employee).deliver_now
             render json: @employee
         else
             render json: {error: " Employee Information is not recorded "}
